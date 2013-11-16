@@ -1,4 +1,4 @@
-% LaTeX source for ``Think Python: How to Think Like a Computer Scientist''
+% LaTeX source for ``Think Python: Pensare da informatico''
 % Copyright (c)  2012  Allen B. Downey.
 
 % License: Creative Commons Attribution-NonCommercial 3.0 Unported License.
@@ -32,7 +32,7 @@
 
 \title{Think Python}
 \author{Allen B. Downey}
-\newcommand{\thetitle}{Think Python: How to Think Like a Computer Scientist}
+\newcommand{\thetitle}{Think Python: Pensare da informatico}
 \newcommand{\theversion}{2.0.12}
 \newcommand{\thedate}{May 2013}
 
@@ -98,7 +98,7 @@
 
 \begin{spacing}{3}
 {\huge Think Python}\\
-{\Large How to Think Like a Computer Scientist}
+{\Large Pensare da informatico}
 \end{spacing}
 
 \vspace{0.25in}
@@ -129,7 +129,7 @@ Version \theversion
 
 \begin{spacing}{3}
 {\huge Think Python}\\
-{\Large How to Think Like a Computer Scientist}
+{\Large Pensare da informatico}
 \end{spacing}
 
 \vspace{0.25in}
@@ -330,7 +330,7 @@ favorite language.
 \index{Elkner, Jeff}
 
 Thanks also to Chris Meyers, who contributed several sections
-to {\em How to Think Like a Computer Scientist}.
+to {\em Pensare da informatico}.
 \index{Meyers, Chris}
 
 Thanks to the Free Software Foundation for developing
@@ -342,7 +342,7 @@ Commons for the license I am using now.
 \index{Creative Commons}
 
 Thanks to the editors at Lulu who worked on
-{\em How to Think Like a Computer Scientist}.
+{\em Pensare da informatico}.
 
 Thanks to all the students who worked with earlier
 versions of this book and all the contributors (listed
@@ -727,70 +727,38 @@ changes in error messages.
 % START THE BOOK
 \mainmatter
 
-\chapter{The way of the program}
+\chapter{Imparare a programmare}
 
-The goal of this book is to teach you to think like a
-computer scientist.  This way of thinking combines some of the best features
-of mathematics, engineering, and natural science.  Like mathematicians,
-computer scientists use formal languages to denote ideas (specifically
-computations).  Like engineers, they design things, assembling components
-into systems and evaluating tradeoffs among alternatives.  Like scientists,
-they observe the behavior of complex systems, form hypotheses, and test
-predictions.
-\index{problem solving}
+L'obiettivo di questo libro è insegnarti a pensare da informatico. Questo modo di pensare combina alcune delle migliori caratteristiche della matematica, dell'ingegneria e delle scienze naturali. Come i matematici, gli informatici usano linguaggi formali per denotare idee (nella fattispecie elaborazioni). Come gli ingegneri progettano cose, assemblano componenti in sistemi e cercano compromessi tra le varie alternative. Come gli scienziati osservano il comportamento di sistemi complessi, formulano ipotesi e verificano previsioni.
 
-The single most important skill for a computer scientist is {\bf
-problem solving}.  Problem solving means the ability to formulate
-problems, think creatively about solutions, and express a solution clearly
-and accurately.  As it turns out, the process of learning to program is an
-excellent opportunity to practice problem-solving skills.  That's why
-this chapter is called, ``The way of the program.''
+\index{soluzione di problemi}
 
-On one level, you will be learning to program, a useful
-skill by itself.  On another level, you will use programming as a means to
-an end.  As we go along, that end will become clearer.
+La più importante capacità di un informatico è quella di {\bf risolvere problemi}. Risolvere problemi significa avere l'abilità di schematizzarli, pensare creativamente alle possibili soluzioni ed esprimerle in modo chiaro ed accurato. Da ciò emerge che il processo di imparare a programmare è un'eccellente opportunità di mettere in pratica l'abilità di risolvere problemi.
+
+Da una parte ti sarà insegnato a programmare, già di per sé un'utile capacità. Dall'altra userai la programmazione come un mezzo rivolto ad un fine. Mentre procederemo quel fine ti diverrà più chiaro.
 
 \section{The Python programming language}
 \index{programming language}
 \index{language!programming}
 
-The programming language you will learn is Python. Python is
-an example of a {\bf high-level language}; other high-level languages
-you might have heard of are C, C++, Perl, and Java.
+Il linguaggio di programmazione che imparerai è il Python. Python è un esempio di linguaggio di {\bf alto livello}; altri linguaggi di alto livello di cui puoi aver sentito parlare sono il C, il C++, il Perl ed il Java.
 
-There are
-also {\bf low-level languages}, sometimes referred to as ``machine
-languages'' or ``assembly languages.''  Loosely speaking, computers
-can only run programs written in low-level languages.  So
-programs written in a high-level language have to be processed before
-they can run.  This extra processing takes some time, which is a small
-disadvantage of high-level languages.
+Come puoi immaginare sentendo la definizione ``linguaggio di alto livello'' esistono anche linguaggi di {\bf basso livello}, talvolta chiamati ``linguaggi macchina'' o ``linguaggi assembly''. In modo non del tutto corretto si può affermare che i computer possono eseguire soltanto programmi scritti in linguaggi di basso livello: i programmi scritti in un linguaggio di alto livello devono essere elaborati prima di poter essere eseguiti. Questo processo di elaborazione impiega del tempo e rappresenta un piccolo svantaggio dei linguaggi di alto livello.
+
 \index{portability}
 \index{high-level language}
 \index{low-level language}
 \index{language!high-level}
 \index{language!low-level}
 
-The advantages are enormous.  First, it is much easier to program
-in a high-level language.  Programs written in a high-level language
-take less time to write, they are shorter and easier to read, and they
-are more likely to be correct.  Second, high-level languages are {\bf
-portable}, meaning that they can run on different kinds of computers
-with few or no modifications.  Low-level programs can run on only one
-kind of computer and have to be rewritten to run on another.
+I vantaggi sono d'altra parte enormi. In primo luogo è molto più facile programmare in un linguaggio ad alto livello: questi tipi di programmi sono più veloci da scrivere, più corti e facilmente leggibili, ed è più probabile che siano corretti. In secondo luogo i linguaggi di alto livello sono {\bf portabili}: portabilità significa che essi possono essere eseguiti su tipi di computer diversi con poche o addirittura nessuna modifica. I programmi scritti in linguaggi di basso livello possono essere eseguiti solo su un tipo di computer e devono essere riscritti per essere trasportati su un altro sistema.
 
-Due to these advantages, almost all programs are written in high-level
-languages.  Low-level languages are used only for a few specialized
-applications.
+Questi vantaggi sono così evidenti che quasi tutti i programmi sono scritti in linguaggi di alto livello, lasciando spazio ai linguaggi di basso livello solo in poche applicazioni specializzate.
 \index{compile}
 \index{interpret}
 
-Two kinds of programs process high-level languages into low-level
-languages: {\bf interpreters} and {\bf compilers}.  An interpreter
-reads a high-level program and executes it, meaning that it does what
-the program says.  It processes the program a little at a time,
-alternately reading lines and performing computations.
-Figure~\ref{fig.interpret} shows the structure of an interpreter.
+I programmi di alto livello vengono trasformati in programmi di basso livello eseguibili dal computer tramite due tipi di elaborazione: l'{\bf interpretazione} e la {\bf compilazione}. Un interprete legge il programma di alto livello e lo esegue, trasformando ogni riga di istruzioni in un'azione. L'interprete elabora il programma un po' alla volta, alternando la lettura delle istruzioni all'esecuzione dei comandi che le istruzioni descrivono.
+La figura~\ref{fig.interpret} mostra la struttura di un interprete.
 \index{source code}
 \index{object code}
 \index{executable}
@@ -798,31 +766,21 @@ Figure~\ref{fig.interpret} shows the structure of an interpreter.
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.9]{figs/interpret.pdf}}
-\caption{An interpreter processes the program a little at a time,
-alternately reading lines and performing computations.}
+\caption{L'interprete elabora il programma un po' alla volta, alternando la lettura delle istruzioni all'esecuzione dei comandi che le istruzioni descrivono.}
 \label{fig.interpret}
 \end{figure}
 
-A compiler reads the program and translates it completely before the
-program starts running.  In this context, the high-level program is
-called the {\bf source code}, and the translated program is called the
-{\bf object code} or the {\bf executable}.  Once a program is
-compiled, you can execute it repeatedly without further translation.
-Figure~\ref{fig.compile} shows the structure of a compiler.
+Un compilatore legge il programma di alto livello e lo traduce completamente in basso livello, prima che il programma possa essere eseguito. In questo caso il programma di alto livello viene chiamato {\bf codice sorgente}, ed il programma tradotto {\bf codice oggetto} o {\bf eseguibile}. Dopo che un programma è stato compilato può essere eseguito ripetutamente senza che si rendano necessarie ulteriori compilazioni finché non ne viene modificato il codice.
+La figura~\ref{fig.compile} mostra la struttura di un compilatore.
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.9]{figs/compile.pdf}}
-\caption{A compiler translates source code into object code, which is
-run by a hardware executor.}
+\caption{Il compilatore traduce il codice sorgente in codice oggetto, il quale è eseguito da un processore hardware.}
 \label{fig.compile}
 \end{figure}
 
-Python is considered an interpreted language because Python programs
-are executed by an interpreter.  There are two ways to use the
-interpreter: {\bf interactive mode} and {\bf script mode}. In
-interactive mode, you type Python programs and the interpreter displays
-the result:
+Python è considerato un linguaggio interpretato perché i programmi Python sono eseguiti da un interprete. Ci sono due modi di usare l'interprete: in {\bf modo interattivo} o in {\bf modo script}. In modo ``interattivo'' si scrivono i programmi Python una riga alla volta: dopo avere scritto una riga di codice alla pressione di Invio (o Enter, a seconda della tastiera) l'interprete la analizza subito ed elabora immediatamente il risultato, eventualmente stampandolo a video:
 \index{interactive mode}
 \index{script mode}
 
@@ -1240,9 +1198,8 @@ with my thoughts about debugging.  I hope they help!
 
 \begin{description}
 
-\item[problem solving:]  The process of formulating a problem, finding
-a solution, and expressing the solution.
-\index{problem solving}
+\item[soluzione di problemi:]  il processo di formulare un problema, trovare una soluzione ed esprimerla.
+\index{soluzione di problemi}
 
 \item[high-level language:]  A programming language like Python that
 is designed to be easy for humans to read and write.
