@@ -38,7 +38,7 @@ hevea:	book.tex header.html footer.html
 	cp up.png next.png back.png html
 	mv index.html thinkpython.css thinkpython*.html thinkpython*.png *motif.gif html
 
-DEST = /home/downey/public_html/greent/thinkpython
+DEST = ${CWD}thinkpython
 
 epub:
 	cd html; ebook-convert index.html thinkpython.epub
@@ -74,7 +74,7 @@ plastest:
 xxe:
 	~/Downloads/xxe-perso-4_8_0/bin/xxe book/book.xml
 
-OREILLY = /home/downey/oreilly/thinkpython
+OREILLY = ${CWD}oreilly/thinkpython
 
 oreilly:
 	rsync -a book.tex $(OREILLY)
