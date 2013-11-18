@@ -833,150 +833,90 @@ Che ci si creda o meno, questo è più o meno tutto quello che c'è. Ogni progra
 
 Questo concetto può sembrare un po' vago, ma lo riprenderemo quando parleremo di {\bf algoritmi}.
 
-\section{What is debugging?}
+\section{Cos'è il debug?}
 \index{debugging}
 \index{bug}
 
-Programming is error-prone.  For whimsical reasons, programming errors
-are called {\bf bugs} and the process of tracking them down is called
+La programmazione è un processo complesso e dato che esso è fatto da esseri umani spesso comporta errori. Per ragioni bizzarre gli errori di programmazione sono chiamati {\bf bug} ed il processo della loro ricerca e correzione è chiamato {\bf debug}.
 {\bf debugging}.
 \index{debugging}
 \index{bug}
 
-Three kinds of errors can occur in a program: syntax errors, runtime 
-errors, and semantic errors. It is useful
-to distinguish between them in order to track them down more quickly.
+Sono tre i tipi di errore nei quali si incorre durante la programmazione: gli errori di sintassi, gli errori in esecuzione e gli errori di semantica. È utile distinguerli per poterli individuare più velocemente.
 
-\subsection{Syntax errors}
+\subsection{Errori di sintassi}
 \index{syntax error}
 \index{error!syntax}
 \index{error message}
 
-Python can only execute a program if the syntax is
-correct; otherwise, the interpreter displays an error message.
-{\bf Syntax} refers to the structure of a program and the rules about
-that structure.
-For example, parentheses have to come in matching pairs, so
-{\tt (1 + 2)} is legal, but {\tt 8)} is a {\bf syntax error}.
+Python può eseguire un programma solo se il programma è sintatticamente corretto, altrimenti l'elaborazione fallisce e l'interprete ritorna un messaggio d'errore. La {\bf sintassi} si riferisce alla struttura di un programma e alle regole concernenti la sua struttura. Per esempio, le parentesi devono essere bilanciate (ogni parentesi aperta ne comporta una chiusa), qundi {\tt (1 +2)} è un'istruzione valida, mentre {\tt 8)} è un {\bf errore di sintassi}.
 \index{syntax} 
 \index{parentheses!matching}
 \index{syntax}
 \index{cummings, e. e.}
 
-In English, readers can tolerate most syntax errors, which is why we
-can read the poetry of e. e. cummings without spewing error messages.
-Python is not so forgiving.  If there is a single syntax error
-anywhere in your program, Python will display an error message and quit,
-and you will not be able to run your program. During the first few
-weeks of your programming career, you will probably spend a lot of
-time tracking down syntax errors.  As you gain experience, you will
-make fewer errors and find them faster.
+Per la maggior parte dei lettori qualche errore di sintassi non è un problema significativo, tanto che possiamo leggere le poesie di E.E.Cummings (prive di punteggiatura) senza ``messaggi d'errore''. Python non è così permissivo: se c'è un singolo errore di sintassi da qualche parte nel programma Python stamperà un messaggio d'errore e ne interromperà l'esecuzione, rendendo impossibile proseguire. Durante le prime settimane della tua carriera di programmatore probabilmente passerai molto tempo a ricercare errori di sintassi. Via via che acquisirai esperienza questi si faranno meno numerosi e sarà sempre più facile rintracciarli.
 
-\subsection{Runtime errors}
+\subsection{Errori in esecuzione}
 \label{runtime}
-
-The second type of error is a runtime error, so called because the
-error does not appear until after the program has started running.
-These errors are also called {\bf exceptions} because they usually
-indicate that something exceptional (and bad) has happened.
+Il secondo tipo di errore è l'errore in esecuzione (o ``runtime''), così chiamato perché l'errore non appare finché il programma non è eseguito. Questi errori sono anche chiamati {\bf eccezioni} perché indicano che è accaduto qualcosa di eccezionale nel corso dell'esecuzione (per esempio si è cercato di dividere un numero per zero).
 \index{runtime error}
 \index{error!runtime}
 \index{exception}
 \index{safe language}
 \index{language!safe}
 
-Runtime errors are rare in the simple programs you will see in the
-first few chapters, so it might be a while before you encounter one.
+Gli errori in esecuzione sono rari nei semplici programmi che vedrai nei primissimi capitoli, così potrebbe passare un po' di tempo prima che tu ne incontri uno.
 
 
-\subsection{Semantic errors}
+\subsection{Errori di semantica}
 \index{semantics}
 \index{semantic error}
 \index{error!semantic}
 \index{error message}
 
-The third type of error is the {\bf semantic error}.  If there is a
-semantic error in your program, it will run successfully in the sense
-that the computer will not generate any error messages, but it will
-not do the right thing.  It will do something else.  Specifically, it
-will do what you told it to do.
+Il terzo tipo di errore è l'{\bf errore di semantica}. Se c'è un errore di semantica il programma verrà eseguito senza problemi nel senso che il computer non genererà messaggi d'errore durante l'esecuzione, ma il risultato non sarà ciò che ci si aspettava. Sarà qualcosa di diverso, e questo qualcosa è esattamente ciò che è stato detto di fare al computer.
 
-The problem is that the program you wrote is not the program you
-wanted to write.  The meaning of the program (its semantics) is wrong.
-Identifying semantic errors can be tricky because it requires you to work
-backward by looking at the output of the program and trying to figure
-out what it is doing.
+Il problema sta nel fatto che il programma che è stato scritto non è quello che si desiderava scrivere: il significato del programma (la sua semantica) è sbagliato. L'identificazione degli errori di semantica è un processo complesso perché richiede di lavorare in modo inconsueto, guardando i risultati dell'esecuzione e cercando di capire cosa il programma ha fatto di sbagliato per ottenerli.
 
-\subsection{Experimental debugging}
+\subsection{Debug sperimentale}
 
-One of the most important skills you will acquire is debugging.
-Although it can be frustrating, debugging is one of the most
-intellectually rich, challenging, and interesting parts of
-programming.
+Una delle più importanti abilità che acquisirai è la capacità di effettuare il debug (o ``rimozione degli errori''). Sebbene questo possa essere un processo frustrante è anche una delle parti più intellettualmente vivaci, stimolanti ed interessanti della programmazione.
+
 \index{experimental debugging}
 \index{debugging!experimental}
 
-In some ways, debugging is like detective work.  You are confronted
-with clues, and you have to infer the processes and events that led
-to the results you see.
+In un certo senso il debug può essere paragonato al lavoro investigativo. Sei messo di fronte agli indizi e devi ricostruire i processi e gli eventi che hanno portato ai risultati che hai ottenuto.
 
-Debugging is also like an experimental science.  Once you have an idea
-about what is going wrong, you modify your program and try again.  If
-your hypothesis was correct, then you can predict the result of the
-modification, and you take a step closer to a working program.  If
-your hypothesis was wrong, you have to come up with a new one.  As
-Sherlock Holmes pointed out, ``When you have eliminated the
-impossible, whatever remains, however improbable, must be the truth.''
-(A. Conan Doyle, {\em The Sign of Four})
+Il debug è una scienza sperimentale: dopo che hai avuto un'idea di ciò che può essere andato storto, modifichi il programma e lo provi ancora. Se la tua ipotesi era corretta allora puoi predire il risultato della modifica e puoi avvicinarti di un ulteriore passo all'avere un programma funzionante. Se la tua ipotesi era sbagliata devi ricercarne un'altra. Come disse Sherlock Holmes ``Quando hai eliminato l'impossibile ciò che rimane, per quanto improbabile, deve essere la verità'' (A.Conan Doyle, {\em Il segno dei quattro})
 \index{Holmes, Sherlock}
 \index{Doyle, Arthur Conan}
 
-For some people, programming and debugging are the same thing.  That
-is, programming is the process of gradually debugging a program until
-it does what you want.  The idea is that you should start with a
-program that does {\em something} and make small modifications,
-debugging them as you go, so that you always have a working program.
+Per qualcuno la programmazione e il debug sono la stessa cosa, intendendo con questo che la programmazione è un processo di rimozione di errori finché il programma fa ciò che ci si aspetta. L'idea è che si dovrebbe partire da un programma che fa {\bf qualcosa} e facendo piccole modifiche ed eliminando gli errori man mano che si procede si dovrebbe avere in ogni momento un programma funzionante sempre più completo.
 
-For example, Linux is an operating system that contains thousands of
-lines of code, but it started out as a simple program Linus Torvalds
-used to explore the Intel 80386 chip.  According to Larry Greenfield,
-``One of Linus's earlier projects was a program that would switch
-between printing AAAA and BBBB.  This later evolved to Linux.''
-({\em The Linux Users' Guide} Beta Version 1).
+Linux, per fare un esempio, è un sistema operativo che contiene migliaia di righe di codice, ma esso è nato come un semplice programma che Linus Torvalds usò per esplorare il chip 80386 Intel. Secondo Larry Greenfields, ``uno dei progetti iniziali di Linus era un programma che doveva cambiare una riga di AAAA in BBBB e viceversa. Questo in seguito diventò Linux.'' ({\em The Linux Users' Guide} Beta Version 1)
 \index{Linux}
 
-Later chapters will make more suggestions about debugging and other
-programming practices.
+I capitoli successivi ti forniranno ulteriori suggerimenti sia per quanto riguarda il debug che per altre pratiche di programmazione.
 
 
-\section{Formal and natural languages}
+\section{Linguaggi formali e naturali}
 \index{formal language}
 \index{natural language}
 \index{language!formal}
 \index{language!natural}
 
-{\bf Natural languages} are the languages people speak,
-such as English, Spanish, and French.  They were not designed
-by people (although people try to impose some order on them);
-they evolved naturally.
+I {\bf linguaggi naturali} sono le lingue parlate, tipo l'inglese, l'italiano, lo spagnolo. Non sono stati ``progettati'' da qualcuno e anche se è stato imposto un certo ordine nel loro sviluppo si sono evoluti naturalmente.
 
-{\bf Formal languages} are languages that are designed by people for
-specific applications.  For example, the notation that mathematicians
-use is a formal language that is particularly good at denoting
-relationships among numbers and symbols.  Chemists use a formal
-language to represent the chemical structure of molecules.  And
-most importantly:
+I {\bf linguaggi formali} sono linguaggi progettati per specifiche applicazioni.
+Per fare qualche esempio, la notazione matematica è un linguaggio formale particolarmente indicato ad esprimere relazioni tra numeri e simboli; i chimici usano un linguaggio formale per rappresentare la struttura delle molecole; cosa più importante dal nostro punto di vista,
 
 \begin{quote}
-{\bf Programming languages are formal languages that have been
-designed to express computations.}
+{\bf I linguaggi di programmazione sono linguaggi formali che sono stati progettati per esprimere elaborazioni.}
 \end{quote}
 
-Formal languages tend to have strict rules about syntax.  For example,
-$3 + 3 = 6$ is a syntactically correct mathematical statement, but 
-$3 + = 3 \mbox{\$} 6$ is not.
-$H_2O$ is a syntactically correct
-chemical formula, but $_2Zz$ is not.
+I linguaggi formali tendono ad essere piuttosto rigidi per quanto riguarda la sintassi: $3 + 3 = 6$ è una dichiarazione matematica sintatticamente corretta, mentre $3 + = 3 \mbox{\$} 6$ non lo è.
+$H_2O$ è un simbolo chimico sintatticamente corretto contrariamente a $_2Zz$.
 
 Syntax rules come in two flavors, pertaining to {\bf tokens} and
 structure.  Tokens are the basic elements of the language, such as
