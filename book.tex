@@ -918,27 +918,15 @@ Per fare qualche esempio, la notazione matematica è un linguaggio formale parti
 I linguaggi formali tendono ad essere piuttosto rigidi per quanto riguarda la sintassi: $3 + 3 = 6$ è una dichiarazione matematica sintatticamente corretta, mentre $3 + = 3 \mbox{\$} 6$ non lo è.
 $H_2O$ è un simbolo chimico sintatticamente corretto contrariamente a $_2Zz$.
 
-Syntax rules come in two flavors, pertaining to {\bf tokens} and
-structure.  Tokens are the basic elements of the language, such as
-words, numbers, and chemical elements.  One of the problems with
-$3 + = 3 \mbox{\$} 6$ is that \( \$ \) is not a legal token in mathematics
-(at least as far as I know).  Similarly, $_2Zz$ is not legal because
-there is no element with the abbreviation $Zz$.
+Le regole sintattiche si possono dividere in due categorie: la prima riguarda i {\bf token}, la seconda la struttura. I token sono gli elementi di base del linguaggio (quali possono essere le parole in letteratura, i numeri in matematica e gli elementi chimici in chimica). Uno dei problemi con $3 + = 3 \mbox{\$} 6$ è che \( \$ \) non è un token valido in matematica; $_2Zz$ non è valido perché nessun elemento chimico è identificato dal simbolo $Zz$.
 \index{token}
 \index{structure}
 
-The second type of syntax rule pertains to the structure of a
-statement; that is, the way the tokens are arranged.  The statement
-$3 + = 3$ is illegal because even though $+$ and $=$ are
-legal tokens, you can't have one right after the other.  Similarly,
-in a chemical formula the subscript comes after the element name, not
-before.
+Il secondo tipo di regola riguarda la struttura della dichiarazione, cioè il modo in cui i token sono disposti. La dichiarazione $3 + = 3$ è strutturalmente non valida perché benchè $+$ e $=$ siano token legittimi, un segno = non può essere posto immediatamente dopo un segno +. Allo stesso modo l'indice nelle formule chimiche deve essere indicato dopo il simbolo dell'elementi chimico, non prima, e quindi l'espressione $2Zz$ non è valida.
 
 \begin{exercise}
 
-Write a well-structured English
-sentence with invalid tokens in it.  Then write another sentence
-with all valid tokens but with invalid structure.
+Scrivi quella che può sembrare una frase in italiano con dei token non riconoscibili. Poi scrivi un'altra frase con tutti i token validi ma con una struttura non valida.
 
 \end{exercise}
 
