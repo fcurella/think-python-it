@@ -930,281 +930,181 @@ Scrivi quella che può sembrare una frase in italiano con dei token non riconosc
 
 \end{exercise}
 
-When you read a sentence in English or a statement in a formal
-language, you have to figure out what the structure of the sentence is
-(although in a natural language you do this subconsciously).  This
-process is called {\bf parsing}.
+Quando leggi una frase in italiano o una dichiarazione in un linguaggio formale devi capire quale sia la struttura della dichiarazione. Questo processo (chiamato {\bf parsing}) in un linguaggio naturale viene realizzato in modo inconscio e spesso non ci si rende conto della sua intrinseca complessità.
 \index{parse}
 
-For example, when you hear the sentence, ``The penny dropped,'' you
-understand that ``the penny'' is the subject and ``dropped'' is the
-predicate.  Once you have parsed a sentence, you can figure out what it
-means, or the semantics of the sentence.  Assuming that you know
-what a penny is and what it means to drop, you will understand the
-general implication of this sentence.
+Per esempio, quando senti la frase ``La scarpa è caduta'', capisci che ``la scarpa'' è il soggetto e che ``è caduta'' è il verbo. Quando hai analizzato la frase puoi capire cosa essa significa (cioè la semantica della frase). Partendo dal presupposto che tu sappia cosa sia una ``scarpa'' e cosa significhi ``cadere'' riesci a comprendere il significato generale della frase.
 
-Although formal and natural languages have many features in
-common---tokens, structure, syntax, and semantics---there are some
-differences:
+Anche se i linguaggi formali e quelli naturali condividono molte caratteristiche (token, struttura, sintassi e semantica) ci sono tuttavia molte differenze:
 \index{ambiguity}
 \index{redundancy}
 \index{literalness}
 
 \begin{description}
 
-\item[ambiguity:] Natural languages are full of ambiguity, which
-people deal with by using contextual clues and other information.
-Formal languages are designed to be nearly or completely unambiguous,
-which means that any statement has exactly one meaning,
-regardless of context.
+\item[Ambiguità:] i linguaggi naturali ne sono pieni ed il significato viene ottenuto anche grazie ad indizi ricavati dal contesto. I linguaggi formali sono progettati per essere completamente non ambigui e ciò significa che ciascuna dichiarazione ha esattamente un significato, indipendente dal contesto.
 
-\item[redundancy:] In order to make up for ambiguity and reduce
-misunderstandings, natural languages employ lots of
-redundancy.  As a result, they are often verbose.  Formal languages
-are less redundant and more concise.
+\item[Ridondanza:] per evitare l'ambiguità e ridurre le incomprensioni i linguaggi naturali impiegano molta ridondanza. I linguaggi formali sono meno ridondanti e più concisi.
 
-\item[literalness:] Natural languages are full of idiom and metaphor.
-If I say, ``The penny dropped,'' there is probably no penny and
-nothing dropping (this idiom means that someone realized something
-after a period of confusion).  Formal languages
-mean exactly what they say.
+\item[Letteralità:] i linguaggi naturali fanno uso di paragoni e metafore, e possiamo parlare in termini astratti intuendo immediatamente che ciò che sentiamo ha un significato simbolico. I linguaggi formali invece esprimono esattamente ciò che dicono.
 
 \end{description}
 
-People who grow up speaking a natural language---everyone---often have a
-hard time adjusting to formal languages.  In some ways, the difference
-between formal and natural language is like the difference between
-poetry and prose, but more so:
+Anche se siamo cresciuti apprendendo un linguaggio naturale, la nostra lingua madre, spesso abbiamo difficoltà ad adattarci ai linguaggi formali. In un certo senso la differenza tra linguaggi naturali e formali è come quella esistente tra poesia e prosa, ma in misura decisamente più evidente:
 \index{poetry}
 \index{prose}
 
 \begin{description}
 
-\item[Poetry:] Words are used for their sounds as well as for
-their meaning, and the whole poem together creates an effect or
-emotional response.  Ambiguity is not only common but often
-deliberate.
+\item[Poesia:] le parole sono usate tanto per il loro suono che per il loro significato, e la poesia nel suo complesso crea un effetto o una risposta emotiva. L'ambiguità è non solo frequente, ma spesso addirittura cercata.
 
-\item[Prose:] The literal meaning of words is more important,
-and the structure contributes more meaning.  Prose is more amenable to
-analysis than poetry but still often ambiguous.
+\item[Prosa:] il significato delle parole è estremamente importante, con la struttura che contribuisce a fornire maggior significato. La prosa può essere soggetta ad analisi più facilmente della poesia, ma può risultare ancora ambigua.
 
-\item[Programs:] The meaning of a computer program is unambiguous
-and literal, and can be understood entirely by analysis of the
-tokens and structure.
+\item[Programmi:] il significato di un programma per computer è non ambiguo e assolutamente letterale, può essere compreso nella sua interezza con l'analisi dei token e della struttura.
 
 \end{description}
 
-Here are some suggestions for reading programs (and other formal
-languages).  First, remember that formal languages are much more dense
-than natural languages, so it takes longer to read them.  Also, the
-structure is very important, so it is usually not a good idea to read
-from top to bottom, left to right.  Instead, learn to parse the
-program in your head, identifying the tokens and interpreting the
-structure.  Finally, the details matter.  Small errors in
-spelling and punctuation, which you can get away
-with in natural languages, can make a big difference in a formal
-language.
+Qui sono esposti alcuni suggerimenti per la lettura di programmi e di altri linguaggi formali.  Prima di tutto, ricorda che i linguaggi formali sono molto più ricchi di significato dei linguaggi naturali, così è necessario più tempo per leggerli e comprenderli.  Inoltre, la struttura dei linguaggi formali è molto importante e solitamente non è una buona idea leggerli dall'alto in basso, da sinistra a destra, come avviene per un testo letterario: impara ad analizzare il programma nella tua testa, identificandone i token ed interpretandone la struttura. Infine, i dettagli sono importanti: piccole cose come errori di ortografia e cattiva punteggiatura sono spesso trascurabili nei linguaggi naturali, ma possono fare una gran differenza in quelli formali.
 
-
-\section{The first program}
+\section{Il primo programma}
 \label{hello}
 \index{Hello, World}
 
-Traditionally, the first program you write in a new language
-is called ``Hello, World!'' because all it does is display the
-words ``Hello, World!''.  In Python, it looks like this:
+Per tradizione il primo programma scritto in un nuovo linguaggio è chiamato ``Hello, World!'' perché tutto ciò che fa è scrivere le parole ``Hello, World!'' a video e nient'altro. In Python questo programma è scritto così:
 
 \begin{verbatim}
 print 'Hello, World!'
 \end{verbatim}
 %
-This is an example of a {\bf print statement}, which
-doesn't actually print anything on paper.  It displays a value on the
-screen.  In this case, the result is the words
+Questo è un esempio di {\bf istruzione di stampa}, che in effetti non stampa nulla su carta limitandosi invece a scrivere un valore sullo schermo. In questo caso ciò che viene ``stampato'' sono le parole
 
 \begin{verbatim}
 Hello, World!
 \end{verbatim}
 %
-The quotation marks in the program mark the beginning and end
-of the text to be displayed; they don't appear in the result.
+Le virgolette segnano l'inizio e la fine del valore da stampare ed esse non appaiono nel risultato.
 \index{quotation mark}
 \index{print statement}
 \index{statement!print}
 
-In Python 3, the syntax for printing is slightly different:
+In Python 3, la sintassi per stampare un valore a video è leggermente diversa:
 
 \begin{verbatim}
 print('Hello, World!')
 \end{verbatim}
 %
-The parentheses indicate that {\tt print} is a function.  We'll get
-to functions in Chapter~\ref{funcchap}.
+Le parentesi indicano che {\tt print} è una funzione. Incontreremo le funzioni nel Captiolo~\ref{funcchap}.
 \index{function} \index{print function} \index{Python 3}
 
-For the rest of this book, I'll use the print statement.  If you
-are using Python 3, you will have to translate.  But other than
-that, there are very few differences we have to worry about.
-
-
+Per il resto di questo libro, userò l'{\em istruzione} print. Se sai usando Python 3, dovrai usare la funzione. Ma a parte questo, ci sono davvero poche differenze di cui preoccuparsi.
 \section{Debugging}
 \index{debugging}
 
-It is a good idea to read this book in front of a computer so you can
-try out the examples as you go.  You can run most of the examples in
-interactive mode, but if you put the code in a script, it is easier
-to try out variations.
+È una buona idea leggere questo libro di fronte a un computer così da poter provare gli esempi durante la lettura. Puoi eseguire la maggior parte degli esempi in modo interrativo, ma se salvi il codice in uno script ti sarà più facile provare variazioni diverse.
 
-Whenever you are experimenting with a new feature, you should try
-to make mistakes.  For example, in the ``Hello, world!'' program,
-what happens if you leave out one of the quotation marks?  What
-if you leave out both?  What if you spell {\tt print} wrong?
+Quando provi cosa nuove, prova a commettere errori. Per esempio, nel programma ``Hello, world!'', cosa succede se ometti una delle virgolette? Cosa succede se le ometti entrambe? Cosa succede se scrivi {\tt print} sbagliato?
 \index{error message}
 
-This kind of experiment helps you remember what you read; it also helps
-with debugging, because you get to know what the error messages mean.
-It is better to make mistakes now and on purpose than later
-and accidentally.
+Questo tipo di esperimenti ti aiuta a ricordare ciò che hai letto; aiuta anche col debug, perché impari a riconoscere il significato del messaggio d'errore.
+È preferibile fare errori adesso e volontariamente che dopo ed accidentalmente.
 
-Programming, and especially debugging, sometimes brings out strong
-emotions.  If you are struggling with a difficult bug, you might 
-feel angry, despondent or embarrassed.
+Programmare, ed in particolare eseguire il debug, alle volte suscita forti emozioni. Se stai lottando contro un bug difficile, potresti arrabbiarti, abbatterti o sentirti mortificato.
 
-There is evidence that people naturally respond to computers as if
-they were people.  When they work well, we think
-of them as teammates, and when they are obstinate or rude, we
-respond to them the same way we respond to rude,
-obstinate people (Reeves and Nass, {\it The Media
+Ci sono studi che evidenziano come le persone sia naturalmente disposte a rispondere ai computer come se fossero persone reali. Quando funzionano, pensiamo ad essi come compagni di squadra. E quando sono testardi o sgarbati, rispondiamo loro allo stesso modo a cui risponderemmo a persone sgarbate o testarde (Reeves and Nass, {\it The Media
     Equation: How People Treat Computers, Television, and New Media
     Like Real People and Places}).
 \index{debugging!emotional response}
 \index{emotional debugging}
 
-Preparing for these reactions might help you deal with them.
-One approach is to think of the computer as an employee with
-certain strengths, like speed and precision, and
-particular weaknesses, like lack of empathy and inability
-to grasp the big picture.
+Preparsi per queste reazioni più aiutarti ad affrontarle.
+Un approccio è pensare al computer come ad un dipendente con specifici punti di forza, quali velocità ed accuratezza, e particolari punti deboli, quali mancanza d'empatia ed incapacità di catturare la visione d'insieme.
 
-Your job is to be a good manager: find ways to take advantage
-of the strengths and mitigate the weaknesses.  And find ways
-to use your emotions to engage with the problem,
-without letting your reactions interfere with your ability
-to work effectively.
+Il tuo lavoro è essere un buon capo: trovare modi di sfruttare i punti di forza e minimizzare i punti deboli. E trovare modi di usare le tue emozioni per relazionarsi col problema, senza lasciare che le tue reazioni interferiscano con la tua capacità di lavorare efficientemente.
 
-Learning to debug can be frustrating, but it is a valuable skill
-that is useful for many activities beyond programming.  At the
-end of each chapter there is a debugging section, like this one,
-with my thoughts about debugging.  I hope they help!
+Imparare il debug può essere frustrante, ma è una tecnica preziosa che è utile per molte altre attività oltre alla programmazione. Alla fine di ogni capitolo ci sarà una sezione dedicata al debug, come questa, con i miei pensieri a proposito. Spero che ti siano d'aiuto!
 
-
-\section{Glossary}
+\section{Glossario}
 
 \begin{description}
 
-\item[soluzione di problemi:]  il processo di formulare un problema, trovare una soluzione ed esprimerla.
-\index{soluzione di problemi}
+\item[Soluzione di problemi:]  il processo di formulare un problema, trovare una soluzione ed esprimerla.
+\index{problem solving}
 
-\item[high-level language:]  A programming language like Python that
-is designed to be easy for humans to read and write.
+\item[Linguaggio ad alto livello:]  un linguaggio di programmazione tipo Python che è progettato per essere facilmente leggibile e utilizzabile dagli esseri umani..
 \index{high-level language}
 
-\item[low-level language:]  A programming language that is designed
-to be easy for a computer to execute; also called ``machine language'' or
-``assembly language.''
+\item[Linguaggio di basso livello:]  un linguaggio di programmazione che è progettato per essere facilmente eseguibile da un computer; è anche chiamato ``linguaggio macchina'' o ``linguaggio assembly''.
 \index{low-level language}
 
-\item[portability:]  A property of a program that can run on more
-than one kind of computer.
+\item[Portabilità:]  caratteristica di un programma di poter essere eseguito su computer di tipo diverso.
 \index{portability}
 
-\item[interpret:]  To execute a program in a high-level language
-by translating it one line at a time.
+\item[Interpretare:]  eseguire un programma scritto in un linguaggio di alto livello traducendolo ed eseguendolo immediatamente, una linea alla volta..
 \index{interpret}
 
-\item[compile:]  To translate a program written in a high-level language
-into a low-level language all at once, in preparation for later
-execution.
+\item[Compilare:]  tradurre un programma scritto in un linguaggio di alto livello in un programma di basso livello come preparazione alla successiva esecuzione.
 \index{compile}
 
-\item[source code:]  A program in a high-level language before
-being compiled.
+\item[Codice sorgente:]  un programma di alto livello prima di essere compilato.
 \index{source code}
 
-\item[object code:]  The output of the compiler after it translates
-the program.
+\item[Codice oggetto:]  il risultato ottenuto da un compilatore dopo aver tradotto il codice sorgente.
 \index{object code}
 
-\item[executable:]  Another name for object code that is ready
-to be executed.
+\item[Eseguibile:]  altro nome per indicare il codice oggetto pronto per essere eseguito.
 \index{executable}
 
-\item[prompt:] Characters displayed by the interpreter to indicate
-that it is ready to take input from the user.
+\item[Prompt:]  caratteri mostrati dall'interprete per indicare che è pronto ad accettare input dall'utente.
 \index{prompt}
 
-\item[script:] A program stored in a file (usually one that will be
-interpreted).
+\item[Script:]  programma memorizzato in un file, solitamente destinato ad essere interpretato..
 \index{script}
 
-\item[interactive mode:] A way of using the Python interpreter by
-typing commands and expressions at the prompt.
+\item[modo interrativa:] usare l'interprete Python interpreter scrivendo comandi ed espressioni al prompt.
 \index{interactive mode}
 
-\item[script mode:] A way of using the Python interpreter to read
-and execute statements in a script.
+\item[modo script:] usare l'interprete Python per leggere ed eseguire istruzioni contenute in uno script.
 \index{script mode}
 
-\item[programma:] A set of instructions that specifies a computation.
-\index{programma}
+\item[Programma:] serie di istruzioni che specificano come effettuare un'elaborazione.
+\index{program}
 
-\item[algorithm:]  A general process for solving a category of
-problems.
+\item[Algoritmo:]  processo generale usato per risolvere una particolare categoria di problemi.
 \index{algorithm}
 
-\item[bug:]  An error in a program.
+\item[Bug:]  errore in un programma (detto anche "baco")..
 \index{bug}
 
-\item[debugging:]  The process of finding and removing any of the
-three kinds of programming errors.
+\item[Debug:]  processo di ricerca e di rimozione di ciascuno dei tre tipi di errori di programmazione.
 \index{debugging}
 
-\item[syntax:]  The structure of a program.
+\item[Sintassi:]  struttura di un programma..
 \index{syntax}
 
-\item[syntax error:]  An error in a program that makes it impossible
-to parse (and therefore impossible to interpret).
-\index{syntax error}
+\item[Errore di sintassi:]  errore in un programma che rende impossibile la continuazione dell'analisi del codice (il programma non può quindi essere interpretato interamente o compilato).
 
-\item[exception:]  An error that is detected while the program is running.
+\item[Eccezione:]  error rilevato durante l'esecuzione del programma. Altro nome per errore di esecuzione.
 \index{exception}
 
-\item[semantics:]  The meaning of a program.
+\item[Semantica:]  significato di un programma..
 \index{semantics}
 
-\item[semantic error:]   An error in a program that makes it do something
-other than what the programmer intended.
+\item[Errore di semantica:]   errore che risulta nell'esecuzionde di qualcosa di diverso da quello che il programmatore intendeva.
 \index{semantic error}
 
-\item[natural language:]  Any one of the languages that people speak that
-evolved naturally.
+\itemLinguaggio naturale:]  ognuno dei linguaggi parlati evoluti nel tempo.
 \index{natural language}
 
-\item[formal language:]  Any one of the languages that people have designed
-for specific purposes, such as representing mathematical ideas or
-computer programs; all programming languages are formal languages.
+\item[Linguaggio formale:]  ognuno dei linguaggi che sono stati progettati per scopi specifici, quali la rappresentazione di idee matematiche o programmi per computer (tutti i linguaggi per computer sono linguaggi formali).
 \index{formal language}
 
-\item[token:]  One of the basic elements of the syntactic structure of
-a program, analogous to a word in a natural language.
+\item[Token:]  uno degli elementi di base della struttura sintattica di un programma, analogo alla parola nei linguaggi naturali.
 \index{token}
 
-\item[parse:]  To examine a program and analyze the syntactic structure.
+\item[Parsing:]  esame e analisi della struttura sintattica di un programma..
 \index{parse}
 
-\item[print statement:]  An instruction that causes the Python
-interpreter to display a value on the screen.
+\item[Istruzione di stampa:]  istruzione che ordina all'interprete Python di scrivere un valore sullo schermo.
 \index{print statement}
 \index{statement!print}
 
@@ -1212,19 +1112,14 @@ interpreter to display a value on the screen.
 \end{description}
 
 
-\section{Exercises}
+\section{Esercizi}
 
 \begin{exercise}
 
-Use a web browser to go to the Python website \url{http://python.org}.
-This page contains information about Python and links
-to Python-related pages, and it gives you the ability to search
-the Python documentation.
+Usa un browser web per andare al sito di Python \url{http://python.org}.
+Questa pagina contiene informazioni e link ad altre pagine relative a Python, e fornisce l'abilità di cercare all'interno della documenzione.
 
-For example, if you enter {\tt print} in the search window, the
-first link that appears is the documentation of the {\tt print}
-statement.  At this point, not all of it will make sense to you,
-but it is good to know where it is.
+Per esempio, se inserisci {\tt print} nel cmapo di ricerca, il primo link che apparirà è la documentazion dell'istruzione {\tt print}. A questo punto, non tutto avrà senso per te, ma è bene sapere dove trovare queste informazioni.
 \index{documentation}
 \index{python.org}
 
@@ -1232,30 +1127,19 @@ but it is good to know where it is.
 
 \begin{exercise}
 
-Start the Python interpreter and type {\tt help()} to start the online
-help utility.  Or you can type \verb"help('print')" to get information
-about the {\tt print} statement.
+Avvia l'interprete Python e digita {\tt help()} per avviare l'utilià di aiuto in linea. Oppure puoi digitare \verb"help('print')" per ottenere informazioni sull'istruzione {\tt print}.
 
-If this example doesn't work, you
-may need to install additional Python documentation or set an
-environment variable; the details depend on your operating system and
-version of Python.
+Se questo esempio non funziona, potresti aver bisogno di installare la documentazione Python aggiuntiva o impostare una variabile d'ambiente; i dettagli dipendono dal tuo sistema operativo e dalla tua version di Python.
 \index{help utility}
 
 \end{exercise}
 
 \begin{exercise}
 
-Start the Python interpreter and use it as a calculator.
-Python's syntax for math operations is almost the same as
-standard mathematical notation.  For example, the symbols
-{\tt +}, {\tt -} and {\tt /} denote addition, subtraction
-and division, as you would expect.  The symbol for
-multiplication is {\tt *}.
+Avvia l'interprete Python ed usalo come una calcolatrice.
+La sintassi che Python usa per le operazioni matematiche è quasi la stessa di quella usata per la notazione matematica standard.  Per esempio, i simboli {\tt +}, {\tt -} e {\tt /} denotano addizione, sottrazione e divisione, come ti aspetteresti. Il simbolo per la moltiplicazione è {\tt *}.
 
-If you run a 10 kilometer race in 43 minutes 30 seconds, what is your
-average time per mile?  What is your average speed in miles per hour?
-(Hint: there are 1.61 kilometers in a mile).
+Se corri in una gara di 10 kilometri per 43 minuti e 30 secondi, qual'è il tuo tempo medio per miglia? Qual'è la tua velocità media in miglia per ora? (Suggerimento: ci sono 1.61 kilometri in un miglio).
 \index{calculator}
 \index{running pace}
 
